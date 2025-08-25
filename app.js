@@ -22,3 +22,18 @@ function mostrarAmigos() {
     });
 
 }
+
+function sortearAmigo() {
+    let amigoSorteado = document.getElementById("resultado");
+    if(amigos.length < 1){ // Valida que la lista no este vacia y lanza un mensaje de acuerdo a eso
+        alert("La lista no puede estar vacia")
+    }else if (amigos.length < 2){ // Valida que la lista tenga al menos 2 amigos antes de realizar un sorteo y da instrucciones al usuario
+        alert("Necesitas al menos 2 amigos para realizar un sorteo");
+    }else{
+        amigoSorteado.innerHTML =""; // Limpia el elemento antes de realizar un sorteo
+        let sorteado = amigos[Math.floor(Math.random()* amigos.length)]; // Genera un numero aleatorio entre 0 y el ultimo elemento de la array
+        let li = document.createElement("li"); // Crea un nuevo elemento lista en la ul con el id de resultado
+        li.textContent = sorteado; // Asigna el nombre del amigo sorteado al elemento li recien creado
+        amigoSorteado.appendChild(li); // Muestra el resultado en el HTML
+    }
+}
