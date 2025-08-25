@@ -33,7 +33,7 @@ function sortearAmigo() {
         amigoSorteado.innerHTML =""; // Limpia el elemento antes de realizar un sorteo
         let sorteado = amigos[Math.floor(Math.random()* amigos.length)]; // Genera un numero aleatorio entre 0 y el ultimo elemento de la array
         let li = document.createElement("li"); // Crea un nuevo elemento lista en la ul con el id de resultado
-        li.textContent = sorteado; // Asigna el nombre del amigo sorteado al elemento li recien creado
+        li.textContent = `El amigo sorteado es: ${sorteado}!`; // Asigna el nombre del amigo sorteado al elemento li recien creado
         amigoSorteado.appendChild(li); // Muestra el resultado en el HTML
     }
 }
